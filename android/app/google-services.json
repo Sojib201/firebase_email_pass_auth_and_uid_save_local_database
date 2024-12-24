@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "132262039095",
+    "project_id": "fir-login-cff25",
+    "storage_bucket": "fir-login-cff25.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132262039095:android:b62066a0e54a35acd639b2",
+        "android_client_info": {
+          "package_name": "com.example.firebase_email_pass_auth_and_uid_save_local_databaseee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIzjeI7OF2qnIJT1Co6FMwDTCbLuIRiMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
