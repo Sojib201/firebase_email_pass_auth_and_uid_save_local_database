@@ -1,4 +1,3 @@
-
 import 'package:firebase_email_pass_auth_and_uid_save_local_databaseee/UI/sign%20in.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +16,9 @@ class SignUp extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 40,),
+            SizedBox(
+              height: 40,
+            ),
             TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -26,13 +27,14 @@ class SignUp extends StatelessWidget {
               ),
               controller: email,
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             TextField(
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 30),
-                border: OutlineInputBorder(),
-                hintText: "Password"
-              ),
+                  contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 30),
+                  border: OutlineInputBorder(),
+                  hintText: "Password"),
               controller: pass,
             ),
             SizedBox(
@@ -46,7 +48,8 @@ class SignUp extends StatelessWidget {
                   final userEmail = email.text;
                   final userPass = pass.text;
 
-                  var obj = AuthHelper();
+                  // var obj = AuthHelper();
+                  final AuthHelper obj = AuthHelper();
                   obj.SignUp(userEmail, userPass, context);
                 },
                 child: Text("Sign Up"),
@@ -57,8 +60,8 @@ class SignUp extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                Navigator.push(context,
-                    CupertinoPageRoute(builder: (context) => SignIn()));
+                Navigator.push(
+                    context, CupertinoPageRoute(builder: (context) => LogIn()));
               },
               child: Text("Already Created an Account ? Login"),
             ),

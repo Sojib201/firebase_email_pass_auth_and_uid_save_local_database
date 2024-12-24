@@ -1,11 +1,9 @@
 import 'dart:async';
-
+import 'package:firebase_email_pass_auth_and_uid_save_local_databaseee/UI/sign%20in.dart';
 import 'package:firebase_email_pass_auth_and_uid_save_local_databaseee/UI/sign%20up.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
-
-import 'home screen.dart';
 
 class SplashScreen extends StatelessWidget {
   SplashScreen({Key? key}) : super(key: key);
@@ -17,7 +15,7 @@ class SplashScreen extends StatelessWidget {
 
     if (userId != null) {
       Navigator.push(
-          context, CupertinoPageRoute(builder: (context) => HomeScreen()));
+          context, CupertinoPageRoute(builder: (context) => LogIn()));
     } else {
       Navigator.push(
           context, CupertinoPageRoute(builder: (context) => SignUp()));
@@ -30,11 +28,21 @@ class SplashScreen extends StatelessWidget {
       chooseScreen(context);
     });
     return Scaffold(
-        body: Container(
-      height: double.infinity,
-      width: double.infinity,
-      child: Image.network(
-          "https://cdn.dribbble.com/users/7505068/screenshots/15502898/splash_screen_muse.png?compress=1&resize=400x300"),
-    ));
+      body: Container(
+        color: Colors.grey,
+        height: double.infinity,
+        width: double.infinity,
+        child: Center(
+          child: Text(
+            'Splash Screen',
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          ),
+        ),
+        // child: Image.network(
+        //   "https://cdn.dribbble.com/users/7505068/screenshots/15502898/splash_screen_muse.png?compress=1&resize=400x300",
+        //   fit: BoxFit.fill,
+        // ),
+      ),
+    );
   }
 }

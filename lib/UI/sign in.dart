@@ -1,11 +1,10 @@
-
 import 'package:firebase_email_pass_auth_and_uid_save_local_databaseee/UI/sign%20up.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../helper/auth_helper.dart';
 
-class SignIn extends StatelessWidget {
+class LogIn extends StatelessWidget {
   TextEditingController email = TextEditingController();
   TextEditingController pass = TextEditingController();
 
@@ -15,6 +14,7 @@ class SignIn extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(30),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
               height: 40,
@@ -47,7 +47,8 @@ class SignIn extends StatelessWidget {
                   final userEmail = email.text;
                   final userPassword = pass.text;
 
-                  var obj = AuthHelper();
+                  // var obj = AuthHelper();
+                  final AuthHelper obj = AuthHelper();
                   obj.SignIn(userEmail, userPassword, context);
                 },
                 child: Text("Sign In"),

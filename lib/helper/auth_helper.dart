@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_email_pass_auth_and_uid_save_local_databaseee/UI/sign%20in.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
@@ -6,7 +7,6 @@ import 'package:get_storage/get_storage.dart';
 import '../UI/home screen.dart';
 
 class AuthHelper {
-
   final box = GetStorage();
 
   Future SignUp(email, password, context) async {
@@ -17,11 +17,14 @@ class AuthHelper {
       var authCredential = userCredential.user;
       print(authCredential);
       if (authCredential!.uid.isNotEmpty) {
-
         box.write('id', authCredential.uid);
 
         Navigator.push(
-            context, CupertinoPageRoute(builder: (_) => HomeScreen()));
+          context,
+          MaterialPageRoute(
+            builder: (context) => LogIn(),
+          ),
+        );
       } else {
         print("sign up failed");
       }
@@ -45,7 +48,11 @@ class AuthHelper {
       print(authCredential);
       if (authCredential!.uid.isNotEmpty) {
         Navigator.push(
-            context, CupertinoPageRoute(builder: (_) => HomeScreen()));
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomeScreen(),
+          ),
+        );
       } else {
         print("sign up failed");
       }
@@ -59,5 +66,4 @@ class AuthHelper {
       print(e);
     }
   }
-
 }
